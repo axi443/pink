@@ -142,6 +142,7 @@
         itemStyle: {
           barBorderRadius: 20,
           color: (params) => {
+            // console.log(params);
             return myColor[params.dataIndex];
           },
         },
@@ -287,6 +288,7 @@
     // console.log($(this).index());
     // console.log(yearData[$(this).index()]);
     var obj = yearData[$(this).index()];
+    // console.log(obj);
     option.series[0].data = obj.data[0];
     option.series[1].data = obj.data[1];
     myChart.setOption(option);
@@ -548,7 +550,7 @@
 //饼图模块2
 (function () {
   var myChart = echarts.init(document.querySelector(".pie2 .chart"));
-  var option = (option = {
+  var option = {
     color: [
       "#006cff",
       "#60cda0",
@@ -598,7 +600,7 @@
         ],
       },
     ],
-  });
+  };
   myChart.setOption(option);
   window.addEventListener("resize", () => {
     myChart.resize();
@@ -722,7 +724,7 @@
     长治: [112.8625, 36.4746],
     阳泉: [113.4778, 38.0951],
     青岛: [120.4651, 36.3373],
-    韶关: [113.7964, 24.7028]
+    韶关: [113.7964, 24.7028],
   };
 
   var XAData = [
@@ -730,7 +732,7 @@
     [{ name: "西安" }, { name: "上海", value: 100 }],
     [{ name: "西安" }, { name: "广州", value: 100 }],
     [{ name: "西安" }, { name: "西宁", value: 100 }],
-    [{ name: "西安" }, { name: "银川", value: 100 }]
+    [{ name: "西安" }, { name: "银川", value: 100 }],
   ];
 
   var XNData = [
@@ -738,7 +740,7 @@
     [{ name: "西宁" }, { name: "上海", value: 100 }],
     [{ name: "西宁" }, { name: "广州", value: 100 }],
     [{ name: "西宁" }, { name: "西安", value: 100 }],
-    [{ name: "西宁" }, { name: "银川", value: 100 }]
+    [{ name: "西宁" }, { name: "银川", value: 100 }],
   ];
 
   var YCData = [
@@ -746,7 +748,7 @@
     [{ name: "拉萨" }, { name: "哈尔滨", value: 100 }],
     [{ name: "银川" }, { name: "上海", value: 100 }],
     [{ name: "银川" }, { name: "西安", value: 100 }],
-    [{ name: "银川" }, { name: "西宁", value: 100 }]
+    [{ name: "银川" }, { name: "西宁", value: 100 }],
   ];
 
   var planePath =
